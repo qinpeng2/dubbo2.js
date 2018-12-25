@@ -21,7 +21,7 @@ import {ensureDir} from 'fs-extra';
 import {IToImportParam, toImport} from './transfer/to-import';
 import {toTypescript} from './transfer/to-typescript';
 import {default as Ast, SourceFile} from 'ts-simple-ast';
-import { IDependItem, IGetTypeInfo, IJClass, ITypeSearch } from "./typings";
+import {IConfig, IDependItem, IGetTypeInfo, IJClass, ITypeSearch} from "./typings";
 
 const log = debug('j2t:core:inteprethandle');
 const ast = new Ast();
@@ -86,6 +86,10 @@ export class IntepretHandle implements ITypeSearch {
   public getTypeInfo: IGetTypeInfo = classPath => {
     return this.request.getTypeInfo(classPath);
   };
+
+  public getConfigInfo(): IConfig {
+    return this.request.getConfigInfo();
+  }
 
   public isTypeParam = typeName => {
     for (let typeParamItem of this.astJava.typeParams) {

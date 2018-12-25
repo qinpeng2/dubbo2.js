@@ -22,9 +22,11 @@ const log = debug('j2t:core:toBeanClass');
 export function toProxyFunc({
   typeName,
   typePath,
+  typeGroup,
 }: {
   typeName: string;
   typePath: string;
+  typeGroup: string;
 }): FunctionDeclarationStructure {
   let parameters = [{name: 'dubbo', isReadOnly: true, type: 'Dubbo'}];
 
@@ -37,6 +39,7 @@ export function toProxyFunc({
     bodyText: `return dubbo.proxyService<${'I' + typeName}>({
         dubboInterface: '${typePath}',
         methods: ${typeName}Wrapper,
+        group: '${typeGroup}',
       }); `,
   };
 }

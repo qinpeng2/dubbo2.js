@@ -110,4 +110,8 @@ export class Request {
   getTypeInfo(classPath): TypeInfoI {
     return this.typeInfo.get(classPath);
   }
+
+  getConfigInfo(): IConfig {
+    return this.config;
+  }
 }

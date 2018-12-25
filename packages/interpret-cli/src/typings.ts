@@ -29,6 +29,7 @@ export interface IDubboExtInfo {
   libDirPath: string;
   //provider后缀名可配置,默认值 Provider
   providerSuffix?: string;
+  group?:string;
 }
 
 export interface IConfig extends IDubboExtInfo {

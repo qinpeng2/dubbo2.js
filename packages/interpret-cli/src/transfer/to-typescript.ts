@@ -73,6 +73,7 @@ export async function toTypescript(
               intepretHandle.classPath.lastIndexOf('.') + 1,
             ),
             typePath: intepretHandle.classPath,
+            typeGroup: intepretHandle.getConfigInfo().group,
           }),
         );
       } else {
