@@ -86,3 +86,8 @@ showCaseProvider.show();
 ```
 
 **_Tip_** `npm install interpret-util dubbo2.js`;
+
+发布至Nexus私服：
+1. 安装本地依赖：npm install
+2. 提示未安装 @types/node ，按照提示安装：npm i @types/node
+3. 执行TS翻译JS：tsc -p tsconfig.json
